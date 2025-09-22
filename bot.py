@@ -431,7 +431,7 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ---------------------- Bot runner ----------------------
 async def run_bot():
-    TOKEN = os.environ.get("BOT_TOKEN")
+    TOKEN = os.environ.get("8026378524:AAHcJH1O73P_IkRFm6EpG7wY0j7X5s46D_w")
     if not TOKEN:
         logger.error("BOT_TOKEN environment variable is not set. Lütfen BOT_TOKEN atayın.")
         raise RuntimeError("BOT_TOKEN environment variable is required")
