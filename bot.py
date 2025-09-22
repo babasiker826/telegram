@@ -419,15 +419,15 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         except Exception as e:
             await update.message.reply_text(f"API çağrısında hata oluştu: {e}")
 
-def main():
+async def main():
     TOKEN = "8026378524:AAHcJH1O73P_IkRFm6EpG7wY0j7X5s46D_w"
     app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(menu_handler))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, message_handler))
+    
     print("Bot çalışıyor...")
-   await app.run_polling()
+    await app.run_polling()  # async fonksiyon içinde await ile çağırılıyor
 
 if __name__ == "__main__":
-    import asyncio
     asyncio.run(main())
