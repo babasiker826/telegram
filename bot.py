@@ -426,7 +426,7 @@ def main():
     app.add_handler(CallbackQueryHandler(menu_handler))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, message_handler))
     print("Bot çalışıyor...")
-    app.run_polling()
+   await app.run_polling()
 
 if __name__ == "__main__":
     import asyncio
